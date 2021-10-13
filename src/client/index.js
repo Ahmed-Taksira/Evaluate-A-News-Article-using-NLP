@@ -10,10 +10,8 @@ import { handleSubmit } from './js/formHandler'
 
 window.addEventListener('DOMContentLoaded', ()=>{
     const submitBtn= document.getElementById('btn-submit')
-    submitBtn.addEventListener('click', ()=>{
+    submitBtn.addEventListener('submit', ()=>{
         handleSubmit()
     })
 })
-
-export {checkUrl, handleSubmit}
 

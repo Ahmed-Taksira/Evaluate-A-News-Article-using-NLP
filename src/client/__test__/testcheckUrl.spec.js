@@ -6,11 +6,12 @@ describe("Testing function checkURL", () => {
     expect(checkUrl).toBeDefined()
   })
 
-  test("Testing a valid url", () => {
-    expect(checkUrl("https://github.com/Ahmed-Taksira/")).toBeTruthy()
-  })
-
   test("Testing an invalid url should return false", () => {
     expect(checkUrl("wrong URL")).toBeFalsy()
   })
+
+  test("Testing a valid url", () => {
+    expect(checkUrl("https://github.com/Ahmed-Taksira/")).toBeTruthy()
+  })
+  
 })

@@ -1,9 +1,9 @@
 import "babel-polyfill"
 
-describe("POST /add-url", ()=>{
+describe("POST /getData", ()=>{
     it('responds with json', function(done) {
         request(app)
-          .post('/add-url')
+          .post('/getData')
           .send({
             text: "Text",
             POLARITY : 'P',

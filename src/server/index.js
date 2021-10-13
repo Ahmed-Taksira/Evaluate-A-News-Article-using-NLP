@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
-const PORT = 8081
+const PORT = 8084
 const apiKey= process.env.API_KEY
 const apiURL = "https://api.meaningcloud.com/sentiment-2.1"
 
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.resolve('src/client/views/index.html'))
 })
 
-app.post('/add-url', async (req, res)=> {
+app.post('/getData', async (req, res)=> {
     try{
         const url = req.body.url
         const MainUrl= `${apiURL}?key=${apiKey}&url=${url}&lang=en`

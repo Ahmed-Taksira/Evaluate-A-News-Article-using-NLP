@@ -7,7 +7,7 @@
 
   <body>
     <main>
-      <div class="container">
+      <div className="center">
         <p>Enter a URL of an article / a blog to discover its sentiment.</p>
         <section>
           <form id="form">
@@ -23,7 +23,7 @@
         </section>
 
         <section>
-          <strong>Form Results:</strong>
+          <h2>Form Results:</h2>
           <div id="text"></div>
           <div id="agreement"></div>
           <div id="subjectivity"></div>
@@ -34,9 +34,7 @@
       </div>
     </main>
     <script>
-      // Check that service workers are supported
       if ('serviceWorker' in navigator) {
-        // Use the window load event to keep the page load performant
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js')
         })
