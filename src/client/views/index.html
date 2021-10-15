@@ -8,7 +8,7 @@
   <body>
     <main>
       <div className="center">
-        <p>Enter a URL of an article / a blog to discover its sentiment.</p>
+        <p>Enter a URL of an article</p>
         <section>
           <form id="form">
             <label for="article-url">URL</label>
@@ -16,6 +16,8 @@
             <button
               type="submit"
               class="btn-submit"
+              id="btn-submit"
+              value="submit"
             >
               Submit
             </button>
@@ -23,13 +25,8 @@
         </section>
 
         <section>
-          <h2>Form Results:</h2>
-          <div id="text"></div>
-          <div id="agreement"></div>
-          <div id="subjectivity"></div>
-          <div id="confidence"></div>
-          <div id="irony"></div>
-          <div id="score_tag"></div>
+          <h2>Results:</h2>
+          <div id="data"></div>
         </section>
       </div>
     </main>

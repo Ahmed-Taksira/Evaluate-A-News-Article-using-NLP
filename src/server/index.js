@@ -52,8 +52,10 @@ app.get('/test', function (req, res) {
 })
 
 app.listen(PORT, (error) => {
-    if (error) throw new Error(error)
+    if (error) 
+        throw new Error(error)
+        
     console.log(`Server listening on port ${PORT}!`)
 })
 
-export { app }
+module.exports=app

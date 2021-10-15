@@ -19,12 +19,33 @@ const post = async (url = '', data = {}) => {
 }
 
 const introduceData = (data) => {
-    document.getElementById('text').innerHTML = `Text: ${data.text}`
-    document.getElementById('agreement').innerHTML = `Agreement: ${data.agreement}`
-    document.getElementById('subjectivity').innerHTML = `Subjectivity: ${data.subjectivity}`
-    document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`
-    document.getElementById('irony').innerHTML = `Irony: ${data.irony}`
-    document.getElementById('score_tag').innerHTML = `Polarity: ${data.score_tag}`
+
+    var Snode = document.createElement("P");
+    var Stextnode = document.createTextNode(`Subjectivity: ${data.subjectivity}`);
+    Snode.appendChild(Stextnode);
+
+    var Anode = document.createElement("P");
+    var Atextnode = document.createTextNode(`Agreement: ${data.agreement}`);
+    Anode.appendChild(Atextnode);
+
+    var Pnode = document.createElement("P");
+    var Ptextnode = document.createTextNode(`Polarity: ${data.score_tag}`);
+    Pnode.appendChild(Ptextnode);
+
+    var Cnode = document.createElement("P");
+    var Ctextnode = document.createTextNode(`Confidence: ${data.confidence}`);
+    Cnode.appendChild(Ctextnode);
+
+    var Inode = document.createElement("P");
+    var Itextnode = document.createTextNode(`Irony: ${data.irony}`);
+    Inode.appendChild(Itextnode);
+
+    const myData= document.getElementById("data")
+    myData.appendChild(Snode)
+    myData.appendChild(Anode)
+    myData.appendChild(Pnode)
+    myData.appendChild(Cnode)
+    myData.appendChild(Inode)
 }
 
 export const handleSubmit = async (event) => {
@@ -33,7 +54,7 @@ export const handleSubmit = async (event) => {
     let formText = document.getElementById('article-url').value
 
     if (checkUrl(formText)) {
-        post("http://localhost:8084/getData", { url: url }).then(data => {
+        await post("http://localhost:8084/getData", { url: url }).then(data => {
             introduceData(data)
         })
     }
